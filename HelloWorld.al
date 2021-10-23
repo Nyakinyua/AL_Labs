@@ -22,9 +22,6 @@ tableextension 50102 "New Item Field" extends "User Setup"
         {
             Caption = 'Allow Credit Limit Change';
             DataClassification = ToBeClassified;
-            trigger OnValidate()begin
-                
-            end;
         }
     }
 }
