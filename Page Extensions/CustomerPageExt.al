@@ -17,4 +17,6 @@ pageextension 50100 MyCustomerExt extends "Customer Card"
             end;
         }
     }
+
+
 }

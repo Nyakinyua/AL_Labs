@@ -9,6 +9,6 @@ codeunit 50101 MySubscribers
     begin
        UserSetup.SetRange("Allow Credit Limit Change",false);
        UserSetup.FindFirst();
-       Error('Can''t modify this field in the address');
+       Error('The Current User Can''t modify this field. Kindly Check User Setup');
     end;
 }
