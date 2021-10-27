@@ -1,4 +1,4 @@
-table 50100 L2Table
+table 50100 "Sales Invoice Clone"
 {
     DataClassification = ToBeClassified;
 
@@ -12,6 +12,9 @@ table 50100 L2Table
         field(2; "Document Type"; Option)
         {
             OptionMembers = "Invoice","Credit Memo";
+            FieldClass = FlowField;
+            CalcFormula = lookup("Sales Header"."Document Type" where("No." = field("Sell To Customer No")));
+
         }
         field(3; "Sell To Customer No"; Code[20])
         {
@@ -28,7 +31,10 @@ table 50100 L2Table
         {
             AutoIncrement = true;
         }
-
+        field(6;"Date Filter";Date)
+        {
+            FieldClass = FlowFilter;
+        }
     }
 
     keys
@@ -37,6 +43,7 @@ table 50100 L2Table
         {
             Clustered = true;
         }
+        
     }
 
     var

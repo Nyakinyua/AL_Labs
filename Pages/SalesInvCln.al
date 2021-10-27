@@ -1,15 +1,16 @@
-page 50100 MyPage
+page 50101 "sales Invoice Cln List"
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = L2Table;
+    SourceTable = "Sales Invoice Clone";
 
     layout
     {
         area(Content)
         {
             repeater(Group)
+        
             {
                 field("No."; "No.")
                 {
@@ -54,6 +55,4 @@ page 50100 MyPage
         }
     }
 
-    var
-        myInt: Integer;
 }

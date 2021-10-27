@@ -7,17 +7,7 @@ report 50100 InsertDataReport
 
     dataset
     {
-        dataitem("Sales Invoice Line"; "Sales Invoice Line")
-        {
-            trigger OnAfterGetRecord()
-            var
-                DataTransfer: Codeunit InsertValCodeunit;
-                MyTable : Record L2Table;
-            begin
-                DataTransfer.InsertValues("Sales Invoice Line",MyTable);
-            end;
-
-        }
+        
     }
 
     requestpage

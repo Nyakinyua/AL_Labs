@@ -2,6 +2,7 @@ pageextension 50100 MyCustomerExt extends "Customer Card"
 {
     layout
     {
+        
         modify("Credit Limit (LCY)")
         {
             trigger OnBeforeValidate();
@@ -16,6 +17,7 @@ pageextension 50100 MyCustomerExt extends "Customer Card"
                 Publisher.OnCreditLimitChanged();
             end;
         }
+
     }
 
 
