@@ -25,10 +25,11 @@ pageextension 50103 CustomerListExt extends "Customer List"
 
     trigger OnAfterGetRecord()
     begin
-        //MyStyleExpr := 'Favourable';
+        Rec.CalcFields("Balance (LCY)");
+        MyStyleExpr := 'Standard';
         if ("No." = '01121212') then MyStyleExpr := 'AttentionAccent';
         if "Balance (LCY)" >= 0 then MyStyleExpr := 'Unfavourable';
-        if "Balance (LCY)" <= 0 then MyStyleExpr := 'Standard';
+        if "Balance (LCY)" <= 0 then MyStyleExpr := 'Favourable';
     end;
 
 }

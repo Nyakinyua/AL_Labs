@@ -1,4 +1,4 @@
-codeunit 50103 CalculateAmounts
+codeunit 50103 CalculateAmounts1
 {
     trigger OnRun()
     begin

@@ -5,10 +5,13 @@ codeunit 50101 MySubscribers
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"MyPublishers", 'OnCreditLimitChanged', '', true, true)]
     procedure CheckAllowedCreditLimitChange();
-    var UserSetup : record "User Setup";
+    var 
+    UserSetup : record "User Setup";
+    ErrUser: Label 'User %1 is not allowed to modify this field';
+
     begin
-       UserSetup.SetRange("Allow Credit Limit Change",false);
-       UserSetup.FindFirst();
-       Error('The Current User Can''t modify this field. Kindly Check User Setup');
+        if UserSetup.Get(UserId) and  GuiAllowed then
+            if not UserSetup."Allow Credit Limit Change" then Error(ErrUser,UserId);      
+       
     end;
 }
