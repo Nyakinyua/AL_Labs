@@ -1,4 +1,4 @@
-table 50100 "Sales Invoice Clone"
+table 50104 "New Sales Invoice Clone"
 {
     DataClassification = ToBeClassified;
 
@@ -31,7 +31,7 @@ table 50100 "Sales Invoice Clone"
         {
             AutoIncrement = true;
         }
-        field(6; "Date Filter"; Date)
+        field(6;"Date Filter";Date)
         {
             FieldClass = FlowFilter;
         }
@@ -43,17 +43,15 @@ table 50100 "Sales Invoice Clone"
         {
             Clustered = true;
         }
-
+        
     }
 
     var
-        NewSalesInv: Record "New Sales Invoice Clone";
+        SalesInvCln: Record "Sales Invoice Clone";
 
     trigger OnInsert()
     begin
-        NewSalesInv.Init();
-        NewSalesInv.TransferFields(Rec, true);
-        NewSalesInv.Insert();
+
     end;
 
     trigger OnModify()
@@ -71,6 +69,6 @@ table 50100 "Sales Invoice Clone"
 
     end;
 
-
+   
 
 }

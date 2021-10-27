@@ -1,10 +1,25 @@
 table 50102 EmployeeBasicPay
 {
     DataClassification = ToBeClassified;
-    
-    fields
+         fields
     {
-        field(1;MyField; Integer)
+        field(1;"No."; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            
+        }
+        field(2;Name; Text[50])
+        {
+            DataClassification = ToBeClassified;
+            
+        }
+        field(3;"Document Type";Option)
+       {
+           DataClassification = ToBeClassified;
+           OptionMembers = "Invoice","Credit Memo";
+       }
+
+        field(4;MyField; Integer)
         {
             DataClassification = ToBeClassified;
             
@@ -13,11 +28,12 @@ table 50102 EmployeeBasicPay
     
     keys
     {
-        key(Key1; MyField)
+        key("No.";"No.")
         {
             Clustered = true;
         }
     }
+ 
     
     var
         myInt: Integer;
